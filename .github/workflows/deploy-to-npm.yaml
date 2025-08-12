@@ -2,7 +2,7 @@ name: Auto Release on Schema Change
 
 on:
   push:
-    branches: [master]
+    branches: [test]
   repository_dispatch:
     types: [trigger-deployment]
   workflow_dispatch:
@@ -28,8 +28,8 @@ jobs:
         run: |
           yarn install --immutable
           yarn graphql:generate
-          yarn workspace @well-played.gg/typescript-sdk build
-          yarn workspace @well-played.gg/react-sdk build
+          yarn workspace @vibesfr/typescript-sdk-test build
+          yarn workspace @vibesfr/react-sdk-test build
 
 #      - name: Generate current GraphQL schema
 #        run: |
